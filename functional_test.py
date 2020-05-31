@@ -30,3 +30,5 @@ assert 'Villa Mascota' in browser.title
 #Customer is satisfied and closes the browser
 
 browser.quit()
+
+#End of the flow
