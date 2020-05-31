@@ -15,8 +15,8 @@ assert 'Villa Mascota' in browser.title
 
 #When the customer press 'enter' , the page updates, and now the page lists
 #"1. Buy peacock feathers" as an item in a to-do list
-
 #There is still a text box inviting customer to add another item. 
+
 #Customer enters "Use peacock feathers to make a fly"
 
 #The page updates again, and now shows both items on Customer list
