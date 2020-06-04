@@ -1,15 +1,24 @@
 from selenium import webdriver
+import unittest
 
-browser = webdriver.Firefox()
+class NewVisitorTest(unittest.TestCase):
 
-#There is a fantastic new website who has incredible new features. 
-# So Customer as a new costumer opens it to check it out the homepage
-browser.get('http://localhost:8000')
+    def SetUp(self):
+        self.browser = webdriver.Firefox()
 
-#There is a huge title in the home page with the brand name
-assert 'Villa Mascota' in browser.title
+    def tearDown(self):
+        self.browser.quit()
 
-#Customer is invited to enter a to-do item straight away
+    def test_can_start_a_list_and_retrieve_it_later(self):
+        #There is a fantastic new website who has incredible new features. 
+        # So Edith as a new costumer opens it to check it out the homepage.
+        self.browser.get('http://localhost:8000')
+
+        #There is a huge title in the home page with the brand name
+        self.assertIn('To-Do', self.browser.title)
+        self.fail('Finish the test!')
+
+#She is invited to enter a to-do item straight away
 
 #Customer types "Buy peacock feathers" into the text box 
 
@@ -29,6 +38,5 @@ assert 'Villa Mascota' in browser.title
 
 #Customer is satisfied and closes the browser
 
-browser.quit()
-
-#End of the flow
+if __name__ == '__main__':
+    unittest.main(warnings='ignore')
