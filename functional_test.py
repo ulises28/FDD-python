@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common import keys
+from selenium.webdriver.common.keys import Keys
 import time
 import unittest
 
@@ -34,7 +34,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # When she hits 'enter', the page updates, and now the page lists
         # "1. Buy peacock feathers" as an item in a to-do list table
-        input.send_keys(Keys.ENTER)
+        inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
 
         table = self.browser.find_elements_by_id('id_lisy_table')
