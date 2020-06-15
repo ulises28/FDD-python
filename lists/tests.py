@@ -11,5 +11,4 @@ class HomePageTest (TestCase):
         self.assertTrue(html.startswith('<!doctype html>'))+
         self.assertIn('<title>To-Do lists</title>', html)
         self.assertTrue(html.endswith('</html>'))
-
         self.assertTemplateUsed(response, 'home.html')
