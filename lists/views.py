@@ -5,7 +5,9 @@ from django.http import Http404
 from .models import Question
 
 def home_page(request):
-    return render(request, 'lists/home.html')
+    return render (request, 'lists/home.html', {
+        'new_item_text': request.POST.get('item_text',''),
+    })
 
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
